@@ -35,7 +35,7 @@ public class GetClassServlet extends HttpServlet {
 				  + " and user.profession=class.profession_grade;";
 			ResultSet rs = stmt.executeQuery(queryClassIdSQL);
 			int[] ids = new int[25];
-			String queryClassDetailSql = "select subject.name, class_room.name, teacher.name" +
+			String queryClassDetailSql = "select subject.id, subject.name, class_room.name, teacher.name" +
 										", class_info.start_week, class_info.end_week" +
 										" from class_info, subject, class_room, teacher" +
 										" where class_info.id=%1$d and class_info.subject_id=subject.id" +
@@ -54,11 +54,12 @@ public class GetClassServlet extends HttpServlet {
 					else {
 						rs = stmt.executeQuery(String.format(queryClassDetailSql, ids[i]));
 						rs.first();
-						jsonObject.put(Param.RES_CLASS_NAME, rs.getString(1));
-						jsonObject.put(Param.RES_CLASS_ROOM, rs.getString(2));
-						jsonObject.put(Param.RES_TEACHER, rs.getString(3));
-						jsonObject.put(Param.RES_START_WEEK, rs.getInt(4));
-						jsonObject.put(Param.RES_END_WEEK, rs.getInt(5));
+						jsonObject.put(Param.RES_SUBJECT_ID, rs.getInt(1));
+						jsonObject.put(Param.RES_CLASS_NAME, rs.getString(2));
+						jsonObject.put(Param.RES_CLASS_ROOM, rs.getString(3));
+						jsonObject.put(Param.RES_TEACHER, rs.getString(4));
+						jsonObject.put(Param.RES_START_WEEK, rs.getInt(5));
+						jsonObject.put(Param.RES_END_WEEK, rs.getInt(6));
 					}
 					jsonArray.put(jsonObject);
 				}

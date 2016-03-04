@@ -34,11 +34,14 @@ public class LoginServlet extends HttpServlet {
 				Class.forName(DB.DRIVER);
 				Connection conn = DriverManager.getConnection(DB.URL, DB.USER, DB.PSW);
 				Statement stmt = conn.createStatement();
-				String querySQL = "select id from user where user_name='" + userName + "' and password='" + psw + "';";
-				ResultSet rs = stmt.executeQuery(querySQL);
+				String querySQL = "select id, user_name from user where (user_name='%1$s'" +
+								" or study_no='%1$s')" +
+								" and password='%2$s';";
+				ResultSet rs = stmt.executeQuery(String.format(querySQL, userName, psw));
 				if (rs.first()) {
 					jsonObject.put(Param.RES_LOGIN_RESULT, "success");
 					jsonObject.put(Param.RES_USER_ID, rs.getInt(1));
+					jsonObject.put(Param.RES_USER_NAME, rs.getString(2));
 				}
 				else {
 					jsonObject.put(Param.RES_LOGIN_RESULT, "用户名或密码错误");

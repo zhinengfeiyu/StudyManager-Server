@@ -15,6 +15,7 @@ public interface Param {
 	String RES_TOPIC_ID = "topic_id";
 	String RES_DISCUSS_ID = "discuss_id";
 	String RES_USER_ID = "user_id";
+	String RES_SUBJECT_ID = "subject_id";
 	String RES_START_WEEK = "start_week";
 	String RES_END_WEEK = "end_week";
 	String RES_TIME = "time";
