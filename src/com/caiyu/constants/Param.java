@@ -16,6 +16,7 @@ public interface Param {
 	String RES_DISCUSS_ID = "discuss_id";
 	String RES_USER_ID = "user_id";
 	String RES_SUBJECT_ID = "subject_id";
+	String RES_TEACHER_ID = "teacher_id";
 	String RES_START_WEEK = "start_week";
 	String RES_END_WEEK = "end_week";
 	String RES_TIME = "time";
@@ -33,4 +34,7 @@ public interface Param {
 	String RES_USER_NAME = "user_name";
 	String RES_SEX = "sex";
 	String RES_PROFESSION = "profession";
+	String RES_PHONE = "phone";
+	String RES_ACADEMY = "academy";
+	String RES_POSITION = "position";
 }

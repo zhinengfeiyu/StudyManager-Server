@@ -37,6 +37,8 @@ public class GetClassServlet extends HttpServlet {
 			int[] ids = new int[25];
 			String queryClassDetailSql = "select subject.id, subject.name, class_room.name, teacher.name" +
 										", class_info.start_week, class_info.end_week" +
+										", teacher.id, teacher.sex, teacher.phone" +
+										", teacher.academy, teacher.position" +
 										" from class_info, subject, class_room, teacher" +
 										" where class_info.id=%1$d and class_info.subject_id=subject.id" +
 										" and class_info.class_room=class_room.id" +
@@ -60,6 +62,11 @@ public class GetClassServlet extends HttpServlet {
 						jsonObject.put(Param.RES_TEACHER, rs.getString(4));
 						jsonObject.put(Param.RES_START_WEEK, rs.getInt(5));
 						jsonObject.put(Param.RES_END_WEEK, rs.getInt(6));
+						jsonObject.put(Param.RES_TEACHER_ID, rs.getInt(7));
+						jsonObject.put(Param.RES_SEX, rs.getString(8));
+						jsonObject.put(Param.RES_PHONE, rs.getString(9));
+						jsonObject.put(Param.RES_ACADEMY, rs.getString(10));
+						jsonObject.put(Param.RES_POSITION, rs.getString(11));
 					}
 					jsonArray.put(jsonObject);
 				}
