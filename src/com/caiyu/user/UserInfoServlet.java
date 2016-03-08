@@ -31,7 +31,7 @@ public class UserInfoServlet extends HttpServlet {
 			Statement stmt = conn.createStatement();
 			String querySQL = 
 					"select name, study_no, user_name, sex, class.profession_grade_name from user,class" +
-					" where user.id=%1$d and user.profession=class.profession_grade;";
+					" where user.id=%1$d and user.profession_no=class.profession_no;";
 			ResultSet rs = stmt.executeQuery(String.format(querySQL, userId));
 			if (rs.first()) {
 				JSONObject jsonObject = new JSONObject();

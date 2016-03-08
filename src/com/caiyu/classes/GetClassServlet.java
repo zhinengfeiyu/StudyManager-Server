@@ -32,7 +32,7 @@ public class GetClassServlet extends HttpServlet {
 			Statement stmt = conn.createStatement();
 			String queryClassIdSQL = 
 					"select class.* from user,class where user.id=" +  userId 
-				  + " and user.profession=class.profession_grade;";
+				  + " and user.profession_no=class.profession_no;";
 			ResultSet rs = stmt.executeQuery(queryClassIdSQL);
 			int[] ids = new int[25];
 			String queryClassDetailSql = "select subject.id, subject.name, class_room.name, teacher.name" +

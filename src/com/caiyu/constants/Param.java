@@ -10,7 +10,10 @@ public interface Param {
 	String REQ_TITLE = "title";
 	String REQ_CONTENT = "content";
 	String REQ_USER_NAME = "user_name";
+	String REQ_STUDY_NO = "study_no";
 	String REQ_PSW = "psw";
+	String REQ_SEARCH_TYPE = "search_type";
+	String REQ_INPUT = "input";
 	
 	String RES_TOPIC_ID = "topic_id";
 	String RES_DISCUSS_ID = "discuss_id";
@@ -37,4 +40,6 @@ public interface Param {
 	String RES_PHONE = "phone";
 	String RES_ACADEMY = "academy";
 	String RES_POSITION = "position";
+	
+	String SUCCESS = "success";
 }
