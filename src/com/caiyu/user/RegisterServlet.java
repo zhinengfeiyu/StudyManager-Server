@@ -49,17 +49,19 @@ public class RegisterServlet extends HttpServlet {
 					String professionNo = studyNo.substring(0, 6);	//专业代号取学号的前6位
 					String queryProNoSQL = "select * from user where profession_no='%1$s';";
 					rs = stmt.executeQuery(String.format(queryProNoSQL, professionNo));
-					if (rs.first()) {
+					if (!rs.first()) {
 						outputStr = "找不到学号对应的专业";
 					}
-					String classNo = studyNo.substring(0, 8);
-					int grade = Integer.parseInt(studyNo.substring(4, 6));
-					int number = Integer.parseInt(studyNo.substring(8, 10));
-					String insertSql = "insert into user values " +
-							"(null,'%1$s','%2$s', '', '', '%3$s', '%4$s', '%5$s', '%6$d', '%7$d');";
-					stmt.execute(String.format(insertSql, userName, psw, 
-									studyNo, professionNo, classNo, grade, number));
-					outputStr = Param.SUCCESS;
+					else {
+						String classNo = studyNo.substring(0, 8);
+						int grade = Integer.parseInt(studyNo.substring(4, 6));
+						int number = Integer.parseInt(studyNo.substring(8, 10));
+						String insertSql = "insert into user values " +
+								"(null,'%1$s','%2$s', '', '', '%3$s', '%4$s', '%5$s', '%6$d', '%7$d');";
+						stmt.execute(String.format(insertSql, userName, psw, 
+										studyNo, professionNo, classNo, grade, number));
+						outputStr = Param.SUCCESS;
+					}
 				}
 			}
 			if (rs!=null) rs.close();
