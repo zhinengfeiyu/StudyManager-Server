@@ -12,6 +12,8 @@ public interface Param {
 	String REQ_USER_NAME = "user_name";
 	String REQ_STUDY_NO = "study_no";
 	String REQ_PSW = "psw";
+	String REQ_REAL_NAME = "real_name";
+	String REQ_SEX = "sex";
 	String REQ_SEARCH_TYPE = "search_type";
 	String REQ_INPUT = "input";
 	
@@ -42,4 +44,5 @@ public interface Param {
 	String RES_POSITION = "position";
 	
 	String SUCCESS = "success";
+	String FAILURE = "failure";
 }

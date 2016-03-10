@@ -24,6 +24,15 @@
   </servlet-mapping>
   
   <servlet>
+  	<servlet-name>updateUserInfoServlet</servlet-name>
+  	<servlet-class>com.caiyu.user.UserInfoUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>updateUserInfoServlet</servlet-name>
+  	<url-pattern>/updateUserInfo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
   	<servlet-name>ForumAddMain</servlet-name>
   	<servlet-class>com.caiyu.forum.ForumAddMain</servlet-class>
   </servlet>
