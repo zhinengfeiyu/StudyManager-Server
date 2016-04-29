@@ -87,6 +87,42 @@
   </servlet-mapping>
   
   <servlet>
+  	<servlet-name>getSubject</servlet-name>
+  	<servlet-class>com.caiyu.classes.GetSubjectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>getSubject</servlet-name>
+  	<url-pattern>/getSubject</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>getTeacher</servlet-name>
+  	<servlet-class>com.caiyu.classes.GetTeacherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>getTeacher</servlet-name>
+  	<url-pattern>/getTeacher</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>getEmptyClassroom</servlet-name>
+  	<servlet-class>com.caiyu.classes.GetEmptyClassroomServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>getEmptyClassroom</servlet-name>
+  	<url-pattern>/getEmptyClassRoom</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>StealClass</servlet-name>
+  	<servlet-class>com.caiyu.classes.StealClassServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>StealClass</servlet-name>
+  	<url-pattern>/stealClass</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
   	<servlet-name>UserInfo</servlet-name>
   	<servlet-class>com.caiyu.user.UserInfoServlet</servlet-class>
   </servlet>

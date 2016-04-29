@@ -16,6 +16,10 @@ public interface Param {
 	String REQ_SEX = "sex";
 	String REQ_SEARCH_TYPE = "search_type";
 	String REQ_INPUT = "input";
+	String REQ_TEACHER_NAME = "teacher_name";
+	String REQ_SUBJECT_NAME = "subject_name";
+	String REQ_START_CLASS_ORDER = "start_class_order";
+	String REQ_END_CLASS_ORDER = "end_class_order";
 	
 	String RES_TOPIC_ID = "topic_id";
 	String RES_DISCUSS_ID = "discuss_id";
@@ -44,6 +48,7 @@ public interface Param {
 	String RES_ACADEMY = "academy";
 	String RES_POSITION = "position";
 	String RES_SUBJECT_NAME = "subject_name";
+	String RES_CLASS_ORDER = "class_order";
 	
 	String SUCCESS = "success";
 	String FAILURE = "failure";

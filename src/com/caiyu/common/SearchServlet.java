@@ -38,6 +38,7 @@ public class SearchServlet extends HttpServlet {
 			String querySql = "";
 			switch (searchType) {
 			case TYPE_CLASS:
+				querySql = "select id, name from subject;";
 				break;
 			case TYPE_CLASS_ROOM:
 				querySql = "select name from class_room where name like '%" + input + "%';";
@@ -52,6 +53,16 @@ public class SearchServlet extends HttpServlet {
 			ResultSet rs = stmt.executeQuery(querySql);
 			switch (searchType) {
 			case TYPE_CLASS:
+				if (rs.first()) {
+					JSONArray jsonArray = new JSONArray();
+					do {
+						JSONObject jsonObject = new JSONObject();
+						jsonObject.put(Param.RES_SUBJECT_ID, rs.getInt(1));
+						jsonObject.put(Param.RES_SUBJECT_NAME, rs.getString(2));					
+						jsonArray.put(jsonObject);
+					} while (rs.next());
+					outputStr = jsonArray.toString();
+				}
 				break;
 			case TYPE_CLASS_ROOM:
 				if (rs.first()) {
